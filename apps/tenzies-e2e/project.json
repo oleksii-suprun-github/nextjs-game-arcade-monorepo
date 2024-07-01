@@ -1,0 +1,9 @@
+{
+  "name": "tenzies-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/tenzies-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["tenzies"],
+  "// targets": "to see all targets run: nx show project tenzies-e2e --web",
+  "targets": {}
+}

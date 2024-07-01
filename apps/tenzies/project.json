@@ -1,0 +1,9 @@
+{
+  "name": "tenzies",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/tenzies",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project tenzies --web",
+  "targets": {}
+}
