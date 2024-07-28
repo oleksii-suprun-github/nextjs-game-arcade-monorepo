@@ -1,0 +1,34 @@
+{
+  "HomePage": {
+    "buttons": {
+      "authorized": "Go to Dashboard",
+      "unauthorized": "Get Started"
+    }
+  },
+  "Header": {
+    "labels": {
+      "promptSymbolsRemaining": "You have <strong>{symbolsUsed} / {symbolsLimit}</strong> games remaining",
+      "promptSymbolsRenewalDate": "Next limits renewal on {limitRenewalDate}"
+    },
+    "navigation": {
+      "journal": "Dashboard",
+      "statistics": "Statistics"
+    }
+  },
+  "JournalList": {
+    "headline": "Journal",
+    "buttons": {
+      "newEntry": "Write a new memo"
+    }
+  },
+  "E404Homepage": {
+    "description1": "Page Not Found",
+    "description2": "Sorry, we can`t find that page.",
+    "linkText": "Back to Homepage"
+  },
+  "E404JournalEntry": {
+    "description1": "Page Not Found",
+    "description2": "Sorry, we can`t find that note.",
+    "linkText": "Back to Dashboard page"
+  }
+}

@@ -44,3 +44,10 @@ Thumbs.db
 # Next.js
 .next
 out
+
+# global env file
+.env
+
+# local env files
+.env*.local
+cypress.env.json
