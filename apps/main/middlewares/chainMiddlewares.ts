@@ -14,6 +14,7 @@ export function chainMiddlewares(functions: MiddlewareFactory[], index = 0): Cus
 
   if (current) {
     const next = chainMiddlewares(functions, index + 1);
+
     return current(next);
   }
 

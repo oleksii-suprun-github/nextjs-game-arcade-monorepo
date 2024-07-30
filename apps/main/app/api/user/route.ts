@@ -1,10 +1,9 @@
-import { getUserByClerkId } from '@utils/auth';
-import { prisma } from '@utils/db';
 import { NextResponse } from 'next/server';
 import { isDynamicServerError } from 'next/dist/client/components/hooks-server-context';
+import { getUserByClerkId } from '@utils/auth';
+import { prisma } from '@utils/db';
 
-export const PATCH = async (request: Request) => {
-  const { promptContentLength } = await request.json();
+export const PATCH = async (_request: Request) => {
   const user = await getUserByClerkId();
 
   if (!user) {
@@ -12,21 +11,19 @@ export const PATCH = async (request: Request) => {
   }
 
   try {
-    // Fetch the current value of promptSymbolsUsed
+    // Fetch the current value of gamesPlayed
     const currentUser = await prisma.user.findUnique({
       where: { id: user.id },
-      select: { promptSymbolsUsed: true },
+      select: { gamesPlayed: true },
     });
 
     if (!currentUser) {
       return NextResponse.json({ message: 'User not found in database' }, { status: 404 });
     }
 
-    const updatedPromptSymbolsUsed = currentUser.promptSymbolsUsed + promptContentLength;
-
     await prisma.user.update({
       where: { id: user.id },
-      data: { promptSymbolsUsed: updatedPromptSymbolsUsed },
+      data: { gamesPlayed: currentUser.gamesPlayed + 1 },
     });
 
     return NextResponse.json({ message: 'User updated successfully' });
@@ -36,6 +33,7 @@ export const PATCH = async (request: Request) => {
     }
 
     console.error('Error processing PATCH request:', error);
+
     return NextResponse.json({ message: 'Error processing request' }, { status: 500 });
   }
 };

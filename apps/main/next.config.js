@@ -3,7 +3,7 @@ const createNextIntlPlugin = require('next-intl/plugin');
 const withPWA = require('next-pwa');
 
 const withNextIntl = createNextIntlPlugin();
-const withPWAConfig = withPWA({dest: 'public'});
+const withPWAConfig = withPWA({ dest: 'public' });
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
@@ -16,11 +16,6 @@ const nextConfig = {
   },
 };
 
-const plugins = [
-  withNx,
-  withNextIntl,
-  withPWAConfig
-];
+const plugins = [withNx, withNextIntl, withPWAConfig];
 
 module.exports = composePlugins(...plugins)(nextConfig);
-

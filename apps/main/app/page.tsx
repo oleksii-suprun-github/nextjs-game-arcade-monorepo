@@ -1,14 +1,13 @@
-import { auth } from '@clerk/nextjs/server';
-import { Hero } from '@components';
-import { LanguageSwitcher } from '@components';
 import { getTranslations } from 'next-intl/server';
 
+import { Hero, LanguageSwitcher } from '@components';
+
+import { auth } from '@clerk/nextjs/server';
+
 const Home = async () => {
-  const { userId } = await auth();
-
-  const headline = 'Sample Headline';
-  const description = 'Sample Description';
-
+  const { userId } = auth();
+  const headline = 'OpenAI Game Arcade';
+  const description = '';
   const t = await getTranslations('HomePage');
   const buttonLabel = userId ? t('buttons.authorized') : t('buttons.unauthorized');
   const href = userId ? '/dashboard' : '/new-user';
@@ -19,8 +18,9 @@ const Home = async () => {
         <LanguageSwitcher />
       </div>
 
-      <Hero headline={headline} description={description} href={href} buttonLabel={buttonLabel} />
+      <Hero buttonLabel={buttonLabel} description={description} headline={headline} href={href} />
     </>
   );
 };
+
 export default Home;

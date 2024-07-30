@@ -1,11 +1,12 @@
 import { getLocale } from 'next-intl/server';
 import { Navbar } from '@components';
-import { getUserByClerkId }  from '@utils/auth';
+import { PromptProvider } from '@context';
+import { getUserByClerkId } from '@utils/auth';
 import { formatPromptData } from '@utils/helpers';
-import { PromptProvider } from '@context/PromptContext';
 
 const getUserInfo = async () => {
   const user = await getUserByClerkId();
+
   if (user) {
     return {
       promptSymbolsLimit: user.gamesLimit,
@@ -13,6 +14,7 @@ const getUserInfo = async () => {
       promptSymbolsLimitRenewal: user.gamesLimitRenewal,
     };
   }
+
   return null;
 };
 

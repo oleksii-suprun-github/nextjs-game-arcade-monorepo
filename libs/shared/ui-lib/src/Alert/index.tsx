@@ -18,10 +18,11 @@ function Alert({
   }[type || 'info'];
 
   return (
-    <div data-testid={testId || 'alert'} role="alert" className={`${alertTypeClass} mb-6`}>
+    <div className={`${alertTypeClass} mb-6`} data-testid={testId || 'alert'} role="alert">
       {type === 'success' ? <FaCheckCircle /> : <IoWarningOutline />}
       <span>{children}</span>
     </div>
   );
 }
+
 export default Alert;

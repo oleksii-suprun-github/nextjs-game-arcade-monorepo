@@ -1,0 +1,1 @@
+type UserLocale = 'en' | 'de';

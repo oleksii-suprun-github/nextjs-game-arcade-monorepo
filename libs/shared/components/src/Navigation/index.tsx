@@ -5,15 +5,13 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { MouseEventHandler } from 'react';
 
-const Navigation = ({ onClick = () => {} }: { onClick?: MouseEventHandler<HTMLAnchorElement> }) => {
+function Navigation({ onClick = () => {} }: { onClick?: MouseEventHandler<HTMLAnchorElement> }) {
   const path = usePathname();
   const isActiveLink = (href: string) => path === href;
 
   const t = useTranslations('Header');
 
-  const navigationLinks = [
-    { label: t('navigation.journal'), href: '/dashboard' },
-  ];
+  const navigationLinks = [{ label: t('navigation.journal'), href: '/dashboard' }];
 
   return (
     <div className="mb-12 mt-5 flex flex-col lg:mb-0 lg:mt-0 lg:flex-row">
@@ -24,8 +22,8 @@ const Navigation = ({ onClick = () => {} }: { onClick?: MouseEventHandler<HTMLAn
               ? 'mb-5 mr-12 text-2xl font-bold lg:mb-0 lg:text-base'
               : 'mb-5 mr-12 text-lg lg:mb-0 lg:text-base'
           }
-          key={link.href}
           href={link.href}
+          key={link.href}
           onClick={onClick}
         >
           <span className="text-stone-300">{link.label}</span>
@@ -33,6 +31,6 @@ const Navigation = ({ onClick = () => {} }: { onClick?: MouseEventHandler<HTMLAn
       ))}
     </div>
   );
-};
+}
 
 export default Navigation;

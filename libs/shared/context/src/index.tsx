@@ -10,7 +10,7 @@ interface PromptContextProps {
 
 const PromptContext = createContext<PromptContextProps | undefined>(undefined);
 
-export const usePrompt = () => {
+const usePrompt = () => {
   const contextData = useContext(PromptContext);
 
   if (!contextData) {
@@ -25,6 +25,8 @@ interface PromptProviderProps {
   value: PromptContextProps;
 }
 
-export const PromptProvider = ({ children, value }: PromptProviderProps) => (
+const PromptProvider = ({ children, value }: PromptProviderProps) => (
   <PromptContext.Provider value={value}>{children}</PromptContext.Provider>
 );
+
+export { PromptProvider, usePrompt };

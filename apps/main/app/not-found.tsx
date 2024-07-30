@@ -1,5 +1,7 @@
 import { NotFound } from '@components';
 
-const PageNotFound = () => <NotFound link="/" homepage />;
+function PageNotFound() {
+  return <NotFound homepage link="/" />;
+}
 
 export default PageNotFound;

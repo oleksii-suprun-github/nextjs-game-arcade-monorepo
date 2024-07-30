@@ -3,9 +3,9 @@
 import { useRef } from 'react';
 import { UserButton } from '@clerk/nextjs';
 import { FiMenu } from 'react-icons/fi';
+import { Drawer, Header, PromptCounter } from '@ui-lib';
 import LanguageSwitcher from '../LanguageSwitcher';
 import Navigation from '../Navigation';
-import { Drawer, Header, PromptCounter } from '@ui-lib';
 
 function Navbar() {
   const drawerToggleRef = useRef<HTMLInputElement>(null);
@@ -23,7 +23,7 @@ function Navbar() {
           <Navigation />
         </div>
         <div className="lg:hidden">
-          <Drawer toggleRef={drawerToggleRef} icon={<FiMenu size={38} />}>
+          <Drawer icon={<FiMenu size={38} />} toggleRef={drawerToggleRef}>
             <Navigation onClick={drawerToggleHandler} />
             <PromptCounter />
           </Drawer>

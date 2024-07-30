@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const createNewUser = async () => {
   const user = await currentUser();
-  const match = await prisma.user.findUnique({ where: { clerkId: user?.id as string } });
+  const match = await prisma.user.findUnique({ where: { clerkId: user?.id } });
 
   if (!match) {
     const now = new Date();
@@ -17,9 +17,9 @@ const createNewUser = async () => {
 
     await prisma.user.create({
       data: {
-        clerkId: user?.id as string,
-        email: user?.emailAddresses[0].emailAddress as string,
-        gamesLimitRenewal: nextRenewalDate as Date,
+        clerkId: user?.id,
+        email: user?.emailAddresses[0].emailAddress,
+        gamesLimitRenewal: nextRenewalDate,
       },
     });
   }
@@ -31,7 +31,6 @@ const createNewUser = async () => {
 
 const NewUserPage = async () => {
   await createNewUser();
-  return <></>;
 };
 
 export default NewUserPage;

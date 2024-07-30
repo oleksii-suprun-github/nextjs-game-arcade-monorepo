@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { update } from '@utils/actions';
-import { analyzeEntry } from '@utils/ai';
 import { getUserByClerkId } from '@utils/auth';
 import { prisma } from '@utils/db';
 import { isDynamicServerError } from 'next/dist/client/components/hooks-server-context';
@@ -21,15 +20,6 @@ export const POST = async (request: Request) => {
       },
     });
 
-    const analysis = await analyzeEntry(entry.content);
-    await prisma.analysis.create({
-      data: {
-        userId: user.id,
-        entryId: entry.id,
-        ...analysis,
-      },
-    });
-
     update(['/dashboard']);
 
     return NextResponse.json({ data: entry });
@@ -39,6 +29,7 @@ export const POST = async (request: Request) => {
     }
 
     console.error('Error processing POST request:', error);
+
     return NextResponse.json({ message: 'Error processing request' }, { status: 500 });
   }
 };

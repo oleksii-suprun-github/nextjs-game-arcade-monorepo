@@ -22,21 +22,43 @@
       "@components": [
         "libs/shared/components/src/index.ts"
       ],
-      "@context/*": [
-        "libs/shared/context/src/*"
+      "@context": [
+        "libs/shared/context/src/index.tsx"
       ],
       "@ui-lib": [
         "libs/shared/ui-lib/src/index.ts"
       ],
-      "@utils/*": [
-        "libs/shared/utils/src/*"
+      "@utils/actions": [
+        "libs/shared/utils/src/actions.ts"
+      ],
+      "@utils/api": [
+        "libs/shared/utils/src/api.ts"
+      ],
+      "@utils/auth": [
+        "libs/shared/utils/src/auth.ts"
+      ],
+      "@utils/constants": [
+        "libs/shared/utils/src/constants.ts"
+      ],
+      "@utils/db": [
+        "libs/shared/utils/src/db.ts"
+      ],
+      "@utils/helpers": [
+        "libs/shared/utils/src/helpers.ts"
+      ],
+      "@utils/locales": [
+        "libs/shared/utils/src/locales.ts"
       ]
     }
   },
   "include": [
     "next-env.d.ts",
+    "libs/**/*.js",
     "libs/**/*.ts",
-    "libs/**/*.tsx"
+    "libs/**/*.tsx",
+    "apps/**/*.js",
+    "apps/**/*.ts",
+    "apps/**/*.tsx"
   ],
   "exclude": [
     "node_modules",

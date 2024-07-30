@@ -21,11 +21,10 @@ export default async function RootLayout({
 }>) {
   const locale = await getLocale();
   const messages = await getMessages();
-
   const clerkLocalization = locale === 'de' ? deDE : enUS;
 
   return (
-    <ClerkProvider afterSignOutUrl={'/sign-in'} localization={clerkLocalization}>
+    <ClerkProvider afterSignOutUrl="/sign-in" localization={clerkLocalization}>
       <html lang={locale}>
         <body className={`min-h-dvh bg-slate-900/25 ${inter.className}`}>
           <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>

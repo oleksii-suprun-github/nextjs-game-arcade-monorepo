@@ -1,6 +1,6 @@
-export const createUrl = (path: string) => window.location.origin + path;
+const createUrl = (path: string) => window.location.origin + path;
 
-export const updateUserPromptUsage = async (promptContentLength: number) => {
+const updateUserPromptUsage = async (promptContentLength: number) => {
   const url = createUrl('/api/user');
 
   const rest = await fetch(
@@ -16,7 +16,7 @@ export const updateUserPromptUsage = async (promptContentLength: number) => {
   }
 };
 
-export const createNewEntry = async (content: string) => {
+const createNewEntry = async (content: string) => {
   const url = createUrl('/api/dashboard');
 
   const res = await fetch(
@@ -32,7 +32,7 @@ export const createNewEntry = async (content: string) => {
   }
 };
 
-export const updateEntry = async (id: string, content: string) => {
+const updateEntry = async (id: string, content: string) => {
   const url = createUrl(`/api/dashboard/${id}`);
 
   const rest = await fetch(
@@ -47,33 +47,4 @@ export const updateEntry = async (id: string, content: string) => {
     return data.data;
   }
 };
-
-export const deleteEntry = async (id: string) => {
-  const url = createUrl(`/api/dashboard/${id}`);
-
-  const res = await fetch(
-    new Request(url, {
-      method: 'DELETE',
-    }),
-  );
-
-  if (res.ok) {
-    return;
-  }
-};
-
-export const askQuestion = async (question: string) => {
-  const url = createUrl('/api/question');
-
-  const res = await fetch(
-    new Request(url, {
-      method: 'POST',
-      body: JSON.stringify({ question }),
-    }),
-  );
-
-  if (res.ok) {
-    const data = await res.json();
-    return data;
-  }
-};
+export { createUrl, updateUserPromptUsage, createNewEntry, updateEntry };

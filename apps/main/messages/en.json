@@ -15,10 +15,15 @@
       "statistics": "Statistics"
     }
   },
-  "JournalList": {
-    "headline": "Journal",
+  "GamesList": {
+    "headline": "Games List",
+    "games": {
+      "tenzies": {
+        "description": "Roll until all dice are the same. Click each die to freeze it at its current value between rolls."
+      }
+    },
     "buttons": {
-      "newEntry": "Write a new memo"
+      "play": "Play now"
     }
   },
   "E404Homepage": {

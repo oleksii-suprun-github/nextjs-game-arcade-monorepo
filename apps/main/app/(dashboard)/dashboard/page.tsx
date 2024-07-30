@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { getUserByClerkId } from '@utils/auth';
+import { GamesList } from '@components';
 
 export const metadata: Metadata = {
   title: 'Dashboard | OpenAI Game Arcade',
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 
 const getEntries = async () => {
   const user = await getUserByClerkId();
+
   if (!user) {
     return { entries: [], user: null };
   }
@@ -25,7 +27,7 @@ const DashboardPage = async () => {
 
   return (
     <div className="min-h-svh p-10">
-      Hello world
+      <GamesList />
     </div>
   );
 };

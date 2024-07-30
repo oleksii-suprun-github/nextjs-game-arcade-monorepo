@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
-const NotFound = ({ link, homepage }: { link: string; homepage?: boolean }) => {
+function NotFound({ link, homepage }: { link: string; homepage?: boolean }) {
   const namespace = homepage ? 'E404Homepage' : 'E404JournalEntry';
   const t = useTranslations(namespace);
 
@@ -21,8 +21,8 @@ const NotFound = ({ link, homepage }: { link: string; homepage?: boolean }) => {
             {t('description2')}
           </p>
           <Link
-            href={link}
             className="focus:ring-primary-300 dark:focus:ring-primary-900 my-4 inline-flex rounded-lg bg-blue-600 px-5 py-2.5 text-center text-sm font-medium text-stone-300 hover:bg-blue-800 focus:outline-none focus:ring-4"
+            href={link}
           >
             {t('linkText')}
           </Link>
@@ -30,6 +30,6 @@ const NotFound = ({ link, homepage }: { link: string; homepage?: boolean }) => {
       </div>
     </section>
   );
-};
+}
 
 export default NotFound;

@@ -15,10 +15,15 @@
       "statistics": "Statistiken"
     }
   },
-  "JournalList": {
-    "headline": "Journal",
+  "GamesList": {
+    "headline": "Spieleliste",
+    "games": {
+      "tenzies": {
+        "description": "Würfeln, bis alle Würfel gleich sind. Klicken Sie auf jeden Würfel, um ihn zwischen den Würfen auf seinem aktuellen Wert zu halten."
+      }
+    },
     "buttons": {
-      "newEntry": "Neuen Eintrag schreiben"
+      "play": "Jetzt spielen"
     }
   },
   "E404Homepage": {
