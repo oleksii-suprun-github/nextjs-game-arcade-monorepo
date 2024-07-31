@@ -5,6 +5,7 @@
   "scripts": {
     "lint:main": "nx lint main",
     "dev:main": "nx serve main",
+    "dev:tenzies": "nx serve tenzies",
     "db:push": "npx prisma db push",
     "db:format": "npx prisma format"
   },
