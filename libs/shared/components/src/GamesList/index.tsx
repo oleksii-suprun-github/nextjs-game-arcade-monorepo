@@ -1,6 +1,6 @@
 'use client';
 
-import { Heading } from '@ui-lib';
+import { Heading } from '@global-ui-lib';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 

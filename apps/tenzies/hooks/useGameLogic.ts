@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import {
@@ -6,9 +8,9 @@ import {
   diceHoldHandler,
   filterRecordsASC,
   setNewDiceSet,
-} from 'utils';
+} from '../utils';
 
-type useGameLogicType = {
+type UseGameLogicType = {
   difficulty: GameDifficulty;
   allDice: Dice[];
   isGameWon: boolean;
@@ -23,7 +25,7 @@ type useGameLogicType = {
   holdDieHandler: (id: string) => void;
 };
 
-const useGameLogic = (): useGameLogicType => {
+const useGameLogic = (): UseGameLogicType => {
   const STORAGE_VARIABLE = 'tenzies-wins-records';
   const recordsFromStorage = localStorage.getItem(STORAGE_VARIABLE);
 
@@ -83,6 +85,7 @@ const useGameLogic = (): useGameLogicType => {
     }
   }, [
     allDice,
+    difficulty,
     difficulty.label,
     gameClicks,
     gameTime,
@@ -109,9 +112,8 @@ const useGameLogic = (): useGameLogicType => {
           setGameWon(false);
           setGameStarted(false);
           return [];
-        } else {
-          return diceHoldHandler(prevAllDice);
         }
+        return diceHoldHandler(prevAllDice);
       });
     } else {
       setGameStarted(true);

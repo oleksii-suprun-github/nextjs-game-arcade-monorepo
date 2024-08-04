@@ -1,25 +1,25 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
-const DifficultySelector = ({ difficultyHandler }: { difficultyHandler: Function }) => {
-  const { t } = useTranslation();
+function DifficultySelector({ difficultyHandler }: { difficultyHandler: (param: string) => void }) {
+  const t = useTranslations('Game');
   return (
-    <section id="difficulty" className="mt=[35px] flex w-full flex-col items-center justify-center">
-      <h2 className="mb-4 mt-10 text-center text-2xl font-extrabold">
-        {t('game.difficulty.headline')}:
+    <section className="mt=[35px] flex w-full flex-col items-center justify-center" id="difficulty">
+      <h2 className="mb-4 mt-10 text-center text-2xl font-extrabold text-stone-300">
+        {t('difficultyHeadline')}:
       </h2>
       <select
-        name="difficulty"
+        aria-label={`${t('labels.difficultyAria')}`}
+        className="select select-bordered bg-slate-800"
         data-testid="difficulty-selector"
-        className="select select-bordered"
-        onChange={(e) => difficultyHandler(e.target.value)}
-        aria-label={`${t('game.difficulty.aria.label')}`}
         defaultValue="normal"
+        name="difficulty"
+        onChange={(e) => difficultyHandler(e.target.value)}
       >
-        <option value="easy">{t('game.difficulty.label.easy')}</option>
-        <option value="normal">{t('game.difficulty.label.normal')}</option>
-        <option value="hard">{t('game.difficulty.label.hard')}</option>
+        <option value="easy">{t('labels.difficultyEasy')}</option>
+        <option value="normal">{t('labels.difficultyNormal')}</option>
+        <option value="hard">{t('labels.difficultyHard')}</option>
       </select>
     </section>
   );
-};
+}
 export default DifficultySelector;

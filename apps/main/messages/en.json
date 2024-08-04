@@ -31,7 +31,7 @@
     "description2": "Sorry, we can`t find that page.",
     "linkText": "Back to Homepage"
   },
-  "E404JournalEntry": {
+  "E404PageEntry": {
     "description1": "Page Not Found",
     "description2": "Sorry, we can`t find that note.",
     "linkText": "Back to Dashboard page"

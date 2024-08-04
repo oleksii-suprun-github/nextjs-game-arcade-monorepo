@@ -1,6 +1,6 @@
 import { getLocale } from 'next-intl/server';
-import { Navbar } from '@components';
-import { PromptProvider } from '@context';
+import { Navbar } from '@global-components';
+import { PromptProvider } from '@global-context';
 import { getUserByClerkId } from '@utils/auth';
 import { formatPromptData } from '@utils/helpers';
 

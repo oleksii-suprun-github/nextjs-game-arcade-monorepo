@@ -11,44 +11,21 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
+    "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@components": [
-        "libs/shared/components/src/index.ts"
-      ],
-      "@context": [
-        "libs/shared/context/src/index.tsx"
-      ],
-      "@ui-lib": [
-        "libs/shared/ui-lib/src/index.ts"
-      ],
-      "@utils/actions": [
-        "libs/shared/utils/src/actions.ts"
-      ],
-      "@utils/api": [
-        "libs/shared/utils/src/api.ts"
-      ],
-      "@utils/auth": [
-        "libs/shared/utils/src/auth.ts"
-      ],
-      "@utils/constants": [
-        "libs/shared/utils/src/constants.ts"
-      ],
-      "@utils/db": [
-        "libs/shared/utils/src/db.ts"
-      ],
-      "@utils/helpers": [
-        "libs/shared/utils/src/helpers.ts"
-      ],
-      "@utils/locales": [
-        "libs/shared/utils/src/locales.ts"
-      ]
+      "@global-components": ["libs/shared/components/src/index.ts"],
+      "@global-context": ["libs/shared/context/src/index.tsx"],
+      "@global-ui-lib": ["libs/shared/ui-lib/src/index.ts"],
+      "@utils/actions": ["libs/shared/utils/src/actions.ts"],
+      "@utils/api": ["libs/shared/utils/src/api.ts"],
+      "@utils/auth": ["libs/shared/utils/src/auth.ts"],
+      "@utils/constants": ["libs/shared/utils/src/constants.ts"],
+      "@utils/db": ["libs/shared/utils/src/db.ts"],
+      "@utils/helpers": ["libs/shared/utils/src/helpers.ts"],
+      "@utils/locales": ["libs/shared/utils/src/locales.ts"]
     }
   },
   "include": [
@@ -60,8 +37,5 @@
     "apps/**/*.ts",
     "apps/**/*.tsx"
   ],
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

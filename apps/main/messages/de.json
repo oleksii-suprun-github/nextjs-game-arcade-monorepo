@@ -31,7 +31,7 @@
     "description2": "Entschuldigung, wir können diese Seite nicht finden.",
     "linkText": "Zurück zur Startseite"
   },
-  "E404JournalEntry": {
+  "E404PageEntry": {
     "description1": "Seite nicht gefunden",
     "description2": "Entschuldigung, wir können diese Notiz nicht finden.",
     "linkText": "Zurück zur Dashboardseite"

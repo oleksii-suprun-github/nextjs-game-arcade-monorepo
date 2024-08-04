@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 
-import { Hero, LanguageSwitcher } from '@components';
+import { Hero, LanguageSwitcher } from '@global-components';
 
 import { auth } from '@clerk/nextjs/server';
 

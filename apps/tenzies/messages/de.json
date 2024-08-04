@@ -1,33 +1,52 @@
 {
-  "Global": {
-    "seconds": "Sekunden",
-    "clicks": "Klicks"
+  "Header": {
+    "labels": {
+      "promptSymbolsRemaining": "Du hast <strong>{symbolsUsed} / {symbolsLimit}</strong> verbleibende Spielen für Eingaben",
+      "promptSymbolsRenewalDate": "Nächste Begrenzungserneuerung am {limitRenewalDate}"
+    },
+    "navigation": {
+      "journal": "Dashboard",
+      "statistics": "Statistiken"
+    }
   },
   "Game": {
     "labels": {
-      "difficulty.easy": "Einfach",
-      "difficulty.normal": "Normal",
-      "difficulty.hard": "Schwer",
-      "difficulty.aria": "Schwierigkeitsgrad",
-      "board.die.aria": "Würfelseite mit {{count}} Punkt(en)",
-      "langSwitcher.aria": "Sprache wechseln"
+      "difficultyEasy": "Einfach",
+      "difficultyNormal": "Normal",
+      "difficultyHard": "Schwer",
+      "difficultyAria": "Schwierigkeitsgrad",
+      "boardDieAria": "Würfelseite mit {{count}} Punkt(en)",
+      "langSwitcherAria": "Sprache wechseln"
+    },
+    "buttons": {
+      "start": "Spiel starten",
+      "reset": "Noch einmal",
+      "rollDice": "Würfeln"
     },
     "description": "Würfle, bis alle Würfel gleich sind. Klicke auf jeden Würfel, um ihn während der Würfe auf seinem aktuellen Wert zu fixieren.",
-    "difficulty.headline": "Bitte wähle den Schwierigkeitsgrad",
-    "start": "Spiel starten",
-    "reset": "Noch einmal",
-    "rollDice": "Würfeln",
+    "difficultyHeadline": "Bitte wähle den Schwierigkeitsgrad",
     "time": "Zeit",
-    "board.headline": "Passe {{difficulty}} Würfel an",
-    "congratulation.headline": "Herzlichen Glückwunsch",
-    "congratulation.description": "Du hast das Spiel gewonnen!",
-    "congratulation.totalClicks": "Gesamtklicks",
-    "congratulation.totalTime": "Gesamtzeit",
-    "records.headline": "Top 5 Ergebnisse",
-    "records.date": "Datum",
-    "records.at": "um",
-    "records.difficulty": "Schwierigkeitsgrad",
-    "records.totalClicks": "Gesamtklicks",
-    "records.totalTime": "Gesamtzeit"
+    "seconds": "Sekunden",
+    "clicks": "Klicks",
+    "boardHeadline": "Passe {difficulty} Würfel an"
+  },
+  "Records": {
+    "headline": "Top 5 Ergebnisse",
+    "date": "Datum",
+    "at": "um",
+    "difficulty": "Schwierigkeitsgrad",
+    "totalClicks": "Gesamtklicks",
+    "totalTime": "Gesamtzeit"
+  },
+  "Results": {
+    "headline": "Herzlichen Glückwunsch",
+    "description": "Du hast das Spiel gewonnen!",
+    "totalClicks": "Gesamtklicks",
+    "totalTime": "Gesamtzeit"
+  },
+  "E404PageEntry": {
+    "description1": "Seite nicht gefunden",
+    "description2": "Entschuldigung, wir können diese Seite nicht finden.",
+    "linkText": "Zurück zur Dashboardseite"
   }
 }

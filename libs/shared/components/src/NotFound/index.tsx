@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
 function NotFound({ link, homepage }: { link: string; homepage?: boolean }) {
-  const namespace = homepage ? 'E404Homepage' : 'E404JournalEntry';
+  const namespace = homepage ? 'E404Homepage' : 'E404PageEntry';
   const t = useTranslations(namespace);
 
   return (

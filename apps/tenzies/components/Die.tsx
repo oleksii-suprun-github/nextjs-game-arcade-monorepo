@@ -1,37 +1,36 @@
-import { MouseEventHandler, Key, JSX } from 'react';
-import { useTranslation } from 'react-i18next';
-import { getPipClasses } from 'utils';
+import { MouseEventHandler, JSX } from 'react';
+import { useTranslations } from 'next-intl';
+import { getPipClasses } from '../utils';
 
 export interface DieProps {
-  key: Key;
   holdDieHandler: MouseEventHandler<HTMLButtonElement>;
   isHeld: boolean;
   value: number;
 }
 
-const Die = ({ holdDieHandler, isHeld, value: pipsAmount }: DieProps) => {
-  const { t } = useTranslation();
+function Die({ holdDieHandler, isHeld, value: pipsAmount }: DieProps) {
+  const t = useTranslations('Game');
 
-  const hasHeldClass = isHeld ? 'bg-main-die-active' : '';
-  let diePips: JSX.Element[] = [];
+  const hasHeldClass = isHeld ? 'bg-green-400' : '';
+  const diePips: JSX.Element[] = [];
   for (let i = 1; i <= pipsAmount; i++) {
     diePips.push(
       <div
-        key={i}
         className={`h-2.5 w-2.5 rounded-[50%] bg-black pips-${pipsAmount} pip-index-${i} ${getPipClasses(pipsAmount, i)}`}
-      ></div>,
+        key={i}
+      />,
     );
   }
 
   return (
     <button
-      className={`bg-main-die relative flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] ${hasHeldClass}`}
+      aria-label={`${t('labels.boardDieAria', { count: pipsAmount })}`}
+      className={`relative m-5 flex h-[100px] w-[100px] cursor-pointer flex-wrap items-center justify-center gap-[22px] self-center justify-self-center rounded-[10px] border-0 bg-white font-[bold] text-[42px] shadow-[0_10px_10px_rgba(0,0,0,0.1)] ${hasHeldClass}`}
+      data-testid="die"
       onClick={holdDieHandler}
-      data-testid={`die`}
-      aria-label={`${t('game.board.die.aria.label', { count: pipsAmount })}`}
     >
       {diePips}
     </button>
   );
-};
+}
 export default Die;

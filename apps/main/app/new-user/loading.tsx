@@ -1,4 +1,4 @@
-import { Loading as Spinner } from '@ui-lib';
+import { Loading as Spinner } from '@global-ui-lib';
 
 function Loading() {
   return (

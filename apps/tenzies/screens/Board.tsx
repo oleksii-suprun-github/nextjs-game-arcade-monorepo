@@ -1,14 +1,14 @@
-import { useTranslation } from 'react-i18next';
-import Header from '../Header';
-import Die from '../Die';
-import RollDiceButton from '../RollDiceButton';
+'use client';
+
+import { useTranslations } from 'next-intl';
+import RollDiceButton from '../components/RollDiceButton';
+import Header from '../components/Header';
+import Die from '../components/Die';
 
 export interface BoardProps {
   allDice: Dice[];
   difficulty: GameDifficulty;
   isRollDisabled: boolean;
-  isGameWon: boolean;
-  isGameStarted: boolean;
   rollDicesHandler: () => void;
   holdDieHandler: (arg: string) => void;
 }
@@ -20,7 +20,8 @@ function Board({
   rollDicesHandler,
   holdDieHandler,
 }: BoardProps) {
-  const { t } = useTranslation();
+  const t = useTranslations('Game');
+
   const dice = allDice.map((die) => (
     <Die
       holdDieHandler={() => holdDieHandler(die.id)}
@@ -37,25 +38,17 @@ function Board({
           className="mb-12 mt-12 text-4xl font-extrabold leading-none"
           data-testid="board-headline"
         >
-          {' '}
-          {t('game.board.headline', { difficulty: difficulty.value })}
+          {t('boardHeadline', { difficulty: difficulty.value })}
         </h1>
       </Header>
-      <section className="justify-center; flex w-full flex-col items-center">
+      <section className="flex w-full flex-col items-center justify-center">
         {dice && (
-          <div
-            className="xs:grid-cols-[repeat(2,1fr)] sm-md:grid-cols-[repeat(3,1fr)] mb-[50px] mt-[25px] grid gap-[25px] md:grid-cols-[repeat(5,1fr)]"
-            id="dice-container"
-          >
+          <div className="flex flex-wrap justify-center" id="dice-container">
             {dice}
           </div>
         )}
-        <RollDiceButton
-          disabled={isRollDisabled}
-          isAllOddSelected={false}
-          onClick={rollDicesHandler}
-        >
-          {t('game.rollDice')}
+        <RollDiceButton disabled={isRollDisabled} onClick={rollDicesHandler}>
+          {t('buttons.rollDice')}
         </RollDiceButton>
       </section>
     </>

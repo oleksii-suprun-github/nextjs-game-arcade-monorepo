@@ -1,42 +1,34 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import RecordElement from './RecordElement';
 
-const RecordsTable = ({ data: records }: { data: GameRecord[] }) => {
-  const { t } = useTranslation();
+function RecordsTable({ data: records }: { data: GameRecord[] }) {
+  const t = useTranslations('Records');
 
   const recordsElements = records.map((record, index) => (
-    <RecordElement key={record.id} data={record} index={index} />
+    <RecordElement data={record} index={index} key={record.id} />
   ));
 
   return (
     <section
+      className="mt-[50px] flex w-full flex-col items-center justify-center"
       data-testid="records-list"
       id="records-list"
-      className="mt-[50px] flex w-full flex-col items-center justify-center"
     >
-      <h2 className="mb-4 text-center text-xl font-extrabold">{t('game.records.headline')}:</h2>
+      <h2 className="mb-4 text-center text-xl font-extrabold text-stone-300">{t('headline')}:</h2>
       <div
+        className="relative w-full overflow-x-auto"
         data-testid="records-table"
         id="records-table-responsive-wrapper"
-        className="relative w-full overflow-x-auto"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
-        <table id="records-table" className="table-sm table">
-          <thead className="bg-main-button text-main-die">
-            <tr className="border-separate text-center">
-              <th className="border-main-board-color border border-gray-400 text-base">#</th>
-              <th className="border-main-board-color border border-gray-400 text-base">
-                {t('game.records.date')}
-              </th>
-              <th className="border-main-board-color border border-gray-400 text-base">
-                {t('game.records.date')}
-              </th>
-              <th className="border-main-board-color border border-gray-400 text-base">
-                {t('game.records.totalClicks')}
-              </th>
-              <th className="border-main-board-color border border-gray-400 text-base">
-                {t('game.records.totalTime')}
-              </th>
+        <table className="table-sm table" id="records-table">
+          <thead className="">
+            <tr className="border-separate bg-slate-800 text-center text-stone-300">
+              <th className="border border-gray-400 text-base">#</th>
+              <th className="border border-gray-400 text-base">{t('date')}</th>
+              <th className="border border-gray-400 text-base">{t('date')}</th>
+              <th className="border border-gray-400 text-base">{t('totalClicks')}</th>
+              <th className="border border-gray-400 text-base">{t('totalTime')}</th>
             </tr>
           </thead>
           <tbody className="text-center">{recordsElements}</tbody>
@@ -44,5 +36,5 @@ const RecordsTable = ({ data: records }: { data: GameRecord[] }) => {
       </div>
     </section>
   );
-};
+}
 export default RecordsTable;

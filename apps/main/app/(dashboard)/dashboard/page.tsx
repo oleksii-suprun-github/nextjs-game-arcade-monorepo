@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { getUserByClerkId } from '@utils/auth';
-import { GamesList } from '@components';
+import { GamesList } from '@global-components';
 
 export const metadata: Metadata = {
   title: 'Dashboard | OpenAI Game Arcade',

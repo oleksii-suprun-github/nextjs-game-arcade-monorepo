@@ -1,22 +1,24 @@
-import React, { MouseEventHandler, PropsWithChildren } from 'react';
+import { MouseEventHandler, PropsWithChildren } from 'react';
 
-const RollDiceButton = ({
+function RollDiceButton({
   onClick,
   children,
   disabled,
 }: PropsWithChildren<{
   onClick: MouseEventHandler<HTMLButtonElement>;
-  disabled: boolean;
-}>) => (
-  <button
-    data-testid="roll-dice-button"
-    data-tip="Please select all equal dice before rolling."
-    className={`btn btn-primary ${disabled ? 'tooltip tooltip-open' : ''} tooltip-top bg-main-button text-main-die mx-auto my-[25px] mt-[50px] w-fit min-w-32 text-2xl`}
-    onClick={onClick}
-    disabled={disabled}
-  >
-    {children}
-  </button>
-);
+  disabled?: boolean;
+}>) {
+  return (
+    <button
+      className={`btn border-none bg-yellow-500 text-black hover:bg-yellow-400 ${disabled ? 'tooltip tooltip-open' : ''} tooltip-top mx-auto my-[25px] mt-[50px] w-fit min-w-32 text-2xl`}
+      data-testid="roll-dice-button"
+      data-tip="Please select all equal dice before rolling."
+      disabled={disabled}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+}
 
 export default RollDiceButton;

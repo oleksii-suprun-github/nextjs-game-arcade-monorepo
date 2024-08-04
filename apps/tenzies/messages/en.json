@@ -1,33 +1,52 @@
 {
-  "Global": {
-    "seconds": "seconds",
-    "clicks": "clicks"
+  "Header": {
+    "labels": {
+      "promptSymbolsRemaining": "You have <strong>{symbolsUsed} / {symbolsLimit}</strong> games remaining",
+      "promptSymbolsRenewalDate": "Next limits renewal on {limitRenewalDate}"
+    },
+    "navigation": {
+      "journal": "Dashboard",
+      "statistics": "Statistics"
+    }
   },
   "Game": {
     "labels": {
-      "difficulty.easy": "Easy",
-      "difficulty.normal": "Normal",
-      "difficulty.hard": "Hard",
-      "difficulty.aria": "Difficulty level",
-      "board.die.aria": "Die with {{count}} pip(s)",
-      "langSwitcher.aria": "Change language"
+      "difficultyEasy": "Easy",
+      "difficultyNormal": "Normal",
+      "difficultyHard": "Hard",
+      "difficultyAria": "Difficulty level",
+      "boardDieAria": "Die with {{count}} pip(s)",
+      "langSwitcherAria": "Change language"
+    },
+    "buttons": {
+      "start": "Start the game",
+      "reset": "Start again",
+      "rollDice": "Roll"
     },
     "description": "Roll until all dice are the same. Click each die to freeze it at its current value between rolls.",
-    "difficulty.headline": "Please choose the difficulty",
-    "start": "Start the game",
-    "reset": "Start again",
-    "rollDice": "Roll",
+    "boardHeadline": "Match {difficulty} dice",
+    "difficultyHeadline": "Please choose the difficulty",
     "time": "Time",
-    "board.headline": "Match {{difficulty}} dice",
-    "congratulation.headline": "Congratulations",
-    "congratulation.description": "You won the game!",
-    "congratulation.totalClicks": "Total Clicks",
-    "congratulation.totalTime": "Total Time",
-    "records.headline": "Top 5 results",
-    "records.date": "Date",
-    "records.at": "at",
-    "records.difficulty": "Difficulty",
-    "records.totalClicks": "Total clicks",
-    "records.totalTime": "Total time"
+    "seconds": "seconds",
+    "clicks": "clicks"
+  },
+  "Records": {
+    "headline": "Top 5 results",
+    "date": "Date",
+    "at": "at",
+    "difficulty": "Difficulty",
+    "totalClicks": "Total clicks",
+    "totalTime": "Total time"
+  },
+  "Results": {
+    "headline": "Congratulations",
+    "description": "You won the game!",
+    "totalClicks": "Total Clicks",
+    "totalTime": "Total Time"
+  },
+  "E404PageEntry": {
+    "description1": "Page Not Found",
+    "description2": "Sorry, we can`t find this page.",
+    "linkText": "Back to Dashboard page"
   }
 }

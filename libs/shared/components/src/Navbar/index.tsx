@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { UserButton } from '@clerk/nextjs';
 import { FiMenu } from 'react-icons/fi';
-import { Drawer, Header, PromptCounter } from '@ui-lib';
+import { Drawer, Header, PromptCounter } from '@global-ui-lib';
 import LanguageSwitcher from '../LanguageSwitcher';
 import Navigation from '../Navigation';
 

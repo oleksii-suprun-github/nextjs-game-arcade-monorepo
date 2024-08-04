@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 import { nanoid } from 'nanoid';
+import { getTranslations } from 'next-intl/server';
 import { orderBy, take } from 'lodash-es';
-import i18n from '../i18n';
 
 declare global {
   interface Window {
@@ -16,20 +17,18 @@ export const Difficulties = [
   { label: 'hard', value: 15 },
 ];
 
-export const getRandomDieValue = (): number => {
-  return Math.ceil(Math.random() * 6);
-};
+export const getRandomDieValue = (): number => Math.ceil(Math.random() * 6);
 
-export const setNewDiceSet = (difficulty: number = 10): Dice[] => {
-  let dicesArr: Dice[] = [];
+export const setNewDiceSet = (difficulty = 10): Dice[] => {
+  const dicesArr: Dice[] = [];
   for (let i = 0; i < difficulty; i++) {
     dicesArr.push({ id: nanoid(), value: getRandomDieValue(), isHeld: false });
   }
   return dicesArr;
 };
 
-export const diceHoldHandler = (dice) =>
-  dice.map((die) => {
+export const diceHoldHandler = (dice: any[]) =>
+  dice.map((die: { isHeld: any }) => {
     if (!die.isHeld) {
       return {
         ...die,
@@ -41,17 +40,6 @@ export const diceHoldHandler = (dice) =>
 
 export const filterRecordsASC = (records: GameRecord[]) =>
   take(orderBy(records, ['gameClicks', 'gameTime'], ['asc', 'asc']), 5);
-
-export const getGameSessionTime = (timestamp: string, lang: string): string => {
-  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const gameSessionDate = new Intl.DateTimeFormat(lang, {
-    dateStyle: 'medium',
-    timeStyle: 'short',
-    timeZone: userTimezone,
-  }).format(+timestamp);
-
-  return gameSessionDate.replace(',', ` ${i18n.t('game.records.at')}`);
-};
 
 export const getPipClasses = (pipsAmount: number, index: number) => {
   switch (pipsAmount) {
@@ -93,12 +81,11 @@ export const checkAndSetGameWonForCypress = (
           id: nanoid(),
           date: Date.now().toString(),
           difficultyLabel: difficulty.label,
-          gameTime: gameTime,
-          gameClicks: gameClicks,
+          gameTime,
+          gameClicks,
         },
         ...prevRecordsList,
       ]),
     );
   }
-  return;
 };

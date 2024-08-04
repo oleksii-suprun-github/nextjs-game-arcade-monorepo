@@ -1,6 +1,6 @@
 'use client';
 
-import { usePrompt } from '@context';
+import { usePrompt } from '@global-context';
 import { useTranslations } from 'next-intl';
 import { FaQuestionCircle } from 'react-icons/fa';
 
