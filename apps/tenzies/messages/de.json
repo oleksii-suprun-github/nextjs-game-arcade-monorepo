@@ -1,0 +1,33 @@
+{
+  "Global": {
+    "seconds": "Sekunden",
+    "clicks": "Klicks"
+  },
+  "Game": {
+    "labels": {
+      "difficulty.easy": "Einfach",
+      "difficulty.normal": "Normal",
+      "difficulty.hard": "Schwer",
+      "difficulty.aria": "Schwierigkeitsgrad",
+      "board.die.aria": "Würfelseite mit {{count}} Punkt(en)",
+      "langSwitcher.aria": "Sprache wechseln"
+    },
+    "description": "Würfle, bis alle Würfel gleich sind. Klicke auf jeden Würfel, um ihn während der Würfe auf seinem aktuellen Wert zu fixieren.",
+    "difficulty.headline": "Bitte wähle den Schwierigkeitsgrad",
+    "start": "Spiel starten",
+    "reset": "Noch einmal",
+    "rollDice": "Würfeln",
+    "time": "Zeit",
+    "board.headline": "Passe {{difficulty}} Würfel an",
+    "congratulation.headline": "Herzlichen Glückwunsch",
+    "congratulation.description": "Du hast das Spiel gewonnen!",
+    "congratulation.totalClicks": "Gesamtklicks",
+    "congratulation.totalTime": "Gesamtzeit",
+    "records.headline": "Top 5 Ergebnisse",
+    "records.date": "Datum",
+    "records.at": "um",
+    "records.difficulty": "Schwierigkeitsgrad",
+    "records.totalClicks": "Gesamtklicks",
+    "records.totalTime": "Gesamtzeit"
+  }
+}

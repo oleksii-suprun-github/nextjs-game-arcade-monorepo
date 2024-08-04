@@ -27,7 +27,8 @@
     "serve": {
       "executor": "@nrwl/next:server",
       "options": {
-        "buildTarget": "main:build"
+        "buildTarget": "main:build",
+        "port": 3000
       }
     },
     "lint": {

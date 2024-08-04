@@ -23,7 +23,7 @@ function GamesList({ entries }: { entries?: unknown }) {
             </figure>
             <div className="card-body">
               <h1 className="card-title">Tenzies</h1>
-              <p>{t('games.tenzies.description')}</p>
+              <p className="mb-5">{t('games.tenzies.description')}</p>
               <div className="card-actions justify-end">
                 <button className="btn bg-yellow-500 text-black hover:bg-yellow-400">
                   {t('buttons.play')}

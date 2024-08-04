@@ -1,5 +1,5 @@
 {
-  "name": "@nextjs-game-arcade-monorepo/main",
+  "name": "@nextjs-game-arcade-monorepo/tenzies",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -14,9 +14,6 @@
     "cy:open": "cypress open",
     "prepare": "husky",
     "lint-staged": "lint-staged"
-  },
-  "dependencies": {
-    "@contentful/rich-text-react-renderer": "^15.22.7"
   },
   "devDependencies": {
     "husky": "^9.0.11",

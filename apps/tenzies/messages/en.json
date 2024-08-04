@@ -1,0 +1,33 @@
+{
+  "Global": {
+    "seconds": "seconds",
+    "clicks": "clicks"
+  },
+  "Game": {
+    "labels": {
+      "difficulty.easy": "Easy",
+      "difficulty.normal": "Normal",
+      "difficulty.hard": "Hard",
+      "difficulty.aria": "Difficulty level",
+      "board.die.aria": "Die with {{count}} pip(s)",
+      "langSwitcher.aria": "Change language"
+    },
+    "description": "Roll until all dice are the same. Click each die to freeze it at its current value between rolls.",
+    "difficulty.headline": "Please choose the difficulty",
+    "start": "Start the game",
+    "reset": "Start again",
+    "rollDice": "Roll",
+    "time": "Time",
+    "board.headline": "Match {{difficulty}} dice",
+    "congratulation.headline": "Congratulations",
+    "congratulation.description": "You won the game!",
+    "congratulation.totalClicks": "Total Clicks",
+    "congratulation.totalTime": "Total Time",
+    "records.headline": "Top 5 results",
+    "records.date": "Date",
+    "records.at": "at",
+    "records.difficulty": "Difficulty",
+    "records.totalClicks": "Total clicks",
+    "records.totalTime": "Total time"
+  }
+}

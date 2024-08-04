@@ -2,18 +2,6 @@
 # yarn lockfile v1
 
 
-"@contentful/rich-text-react-renderer@^15.22.7":
-  version "15.22.8"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-15.22.8.tgz#65de00cea5b2248306a385061e4b90d3d476650f"
-  integrity sha512-ymBMj0P8AT6lFsBhgkXgOP/mO6E13ONoU0uQ3xrNlr2BV9uNyE/IGpKCeAfEvLjEJBM7icpmkGQIo+lDrjE2Xw==
-  dependencies:
-    "@contentful/rich-text-types" "^16.8.2"
-
-"@contentful/rich-text-types@^16.8.2":
-  version "16.8.2"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-16.8.2.tgz#0ee44036a90fe382ce857c3270ed6a0d9e00de57"
-  integrity sha512-telNNx+VLVS78KcgN+HO2zj7HCGTokV3HRzjsD6oqXQEy863zB4nkDFc0cxCO5uDouGJfs0e7O+wX7HZQ30yaQ==
-
 ansi-escapes@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-7.0.0.tgz#00fc19f491bbb18e1d481b97868204f92109bfe7"
