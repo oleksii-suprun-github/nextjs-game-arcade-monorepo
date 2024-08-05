@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nx serve --verbose",
-    "build": "nx build",
-    "start": "nx start",
     "lint": "nx lint",
     "test": "vitest --u",
     "test:coverage": "vitest --coverage",

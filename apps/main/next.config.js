@@ -3,7 +3,10 @@ const createNextIntlPlugin = require('next-intl/plugin');
 const withPWA = require('next-pwa');
 
 const withNextIntl = createNextIntlPlugin();
-const withPWAConfig = withPWA({ dest: 'public' });
+const withPWAConfig = withPWA({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+});
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}

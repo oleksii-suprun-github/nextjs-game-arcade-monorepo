@@ -7,7 +7,8 @@
     "dev:main": "nx serve main",
     "dev:tenzies": "nx serve tenzies",
     "db:push": "npx prisma db push",
-    "db:format": "npx prisma format"
+    "db:format": "npx prisma format",
+    "build": "nx run-many --target=build --all"
   },
   "private": true,
   "dependencies": {

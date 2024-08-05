@@ -25,7 +25,8 @@
     "**/*.jsx",
     "next-env.d.ts",
     ".next/types/**/*.ts",
-    "../../tailwind-preset.config.ts"
+    "../../tailwind-preset.config.ts",
+    "../../dist/apps/tenzies/.next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

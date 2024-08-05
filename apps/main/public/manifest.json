@@ -40,13 +40,6 @@
       "label": "Journal Page"
     },
     {
-      "src": "/assets/screenshots/desktop/screenshot3.png",
-      "sizes": "1920x886",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Journal Entry"
-    },
-    {
       "src": "/assets/screenshots/mobile/screenshot1.png",
       "sizes": "640x1224",
       "type": "image/png",
@@ -57,12 +50,6 @@
       "sizes": "640x1224",
       "type": "image/png",
       "label": "Journal Page"
-    },
-    {
-      "src": "/assets/screenshots/mobile/screenshot3.png",
-      "sizes": "640x1224",
-      "type": "image/png",
-      "label": "Journal Entry"
     }
   ]
 }

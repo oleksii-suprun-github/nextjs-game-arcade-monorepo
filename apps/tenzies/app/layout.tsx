@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
 import { deDE, enUS } from '@clerk/localizations';
 import { NextIntlClientProvider } from 'next-intl';
@@ -6,7 +7,7 @@ import { getMessages, getLocale } from 'next-intl/server';
 import { PromptProvider } from '@global-context';
 import { getUserByClerkId } from '@utils/auth';
 import { formatPromptData } from '@utils/helpers';
-import { Inter } from 'next/font/google';
+import { BASE_URL } from '../constants';
 import './global.css';
 
 /* istanbul ignore next */
@@ -14,7 +15,10 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Tenzies Game - NextJS | TypeScript | Tailwind | Prisma | Clerk | Nx',
-  manifest: '/manifest.json',
+  manifest: `${BASE_URL}/manifest.json`,
+  icons: {
+    icon: `${BASE_URL}/favicon.ico`,
+  },
 };
 
 const getUserInfo = async () => {
